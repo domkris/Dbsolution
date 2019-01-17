@@ -1,0 +1,2 @@
+INSERT INTO Gender(GenderID, GenderShort, GenderTitle, UserCreated, DateCreated, Description ) VALUES(1, 'M    ', 'Male', 'Admin', '2019-01-10 11:02:11',NULL )
+INSERT INTO Gender(GenderID, GenderShort, GenderTitle, UserCreated, DateCreated, Description ) VALUES(2, 'F    ', 'Female', 'Admin', '2019-01-10 11:02:11',NULL )

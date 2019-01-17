@@ -1,0 +1,2 @@
+INSERT INTO NationalIDTypes(NationalIDTypeID, NationalIDTypeTitle, UserCreated, DateCreated ) VALUES(1, 'Osobna iskaznica', 'Admin', '2019-01-10 11:00:34')
+INSERT INTO NationalIDTypes(NationalIDTypeID, NationalIDTypeTitle, UserCreated, DateCreated ) VALUES(2, 'Putovnica', 'Admin', '2019-01-10 11:00:34')

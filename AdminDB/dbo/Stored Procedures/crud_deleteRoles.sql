@@ -1,0 +1,8 @@
+﻿CREATE PROCEDURE crud_deleteRoles
+@RoleID int
+AS
+BEGIN
+DELETE
+FROM Roles
+WHERE RoleID= @RoleID
+END

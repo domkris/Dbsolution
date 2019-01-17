@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>AdminDB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{172da4aa-85b8-4ba3-8fc0-a709925f1b25}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql140DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>AdminDB</RootNamespace>
+    <AssemblyName>AdminDB</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Scripts" />
+    <Folder Include="Scripts\PostInstall" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Users_History.sql" />
+    <Build Include="dbo\Tables\Users.sql" />
+    <Build Include="dbo\Tables\Roles_History.sql" />
+    <Build Include="dbo\Tables\Roles.sql" />
+    <Build Include="dbo\Tables\RoleAuthorizations.sql" />
+    <Build Include="dbo\Tables\Calendar.sql" />
+    <Build Include="dbo\Tables\Authorizations_History.sql" />
+    <Build Include="dbo\Tables\Authorizations.sql" />
+    <Build Include="dbo\Tables\ApplicationUsers.sql" />
+    <Build Include="dbo\Tables\Applications_History.sql" />
+    <Build Include="dbo\Tables\Applications.sql" />
+    <Build Include="Security\admindbadmin.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Functions\fn_GetDayType.sql" />
+    <Build Include="dbo\Functions\fn_CanUserAccessApp.sql" />
+    <Build Include="dbo\Functions\fn_GetAuthorizationsForUser.sql" />
+    <Build Include="dbo\Stored Procedures\crud_UpdateUsers.sql" />
+    <Build Include="dbo\Stored Procedures\crud_UpdateRoles.sql" />
+    <Build Include="dbo\Stored Procedures\crud_UpdateRoleAuthorizations.sql" />
+    <Build Include="dbo\Stored Procedures\crud_UpdateAuthorizations.sql" />
+    <Build Include="dbo\Stored Procedures\crud_UpdateApplicationUsers.sql" />
+    <Build Include="dbo\Stored Procedures\crud_UpdateApplications.sql" />
+    <Build Include="dbo\Stored Procedures\crud_InsertUsers.sql" />
+    <Build Include="dbo\Stored Procedures\crud_InsertRoles.sql" />
+    <Build Include="dbo\Stored Procedures\crud_InsertRoleAuthorizations.sql" />
+    <Build Include="dbo\Stored Procedures\crud_InsertAuthorizations.sql" />
+    <Build Include="dbo\Stored Procedures\crud_InsertApplicationUsers.sql" />
+    <Build Include="dbo\Stored Procedures\crud_InsertApplications.sql" />
+    <Build Include="dbo\Stored Procedures\crud_deleteUsers.sql" />
+    <Build Include="dbo\Stored Procedures\crud_deleteRoles.sql" />
+    <Build Include="dbo\Stored Procedures\crud_deleteRoleAuthorizations.sql" />
+    <Build Include="dbo\Stored Procedures\crud_deleteAuthorizations.sql" />
+    <Build Include="dbo\Stored Procedures\crud_deleteApplicationUsers.sql" />
+    <Build Include="dbo\Stored Procedures\crud_deleteApplications.sql" />
+    <Build Include="Scripts\PostInstall\INSERT_QUERY_ALL_DATA_INTO_AdminDB.sql" />
+    <Build Include="Scripts\PostInstall\INSERT_QUERY_ALL_DATA_INTO_COUNTRIES_CoreDB.sql" />
+    <Build Include="Scripts\PostInstall\INSERT_QUERY_ALL_DATA_INTO_DISTRICTS_CoreDB.sql" />
+    <Build Include="Scripts\PostInstall\INSERT_QUERY_ALL_DATA_INTO_EMPLOYEES_CoreDB.sql" />
+    <Build Include="Scripts\PostInstall\INSERT_QUERY_ALL_DATA_INTO_GENDER_CoreDB.sql" />
+    <Build Include="Scripts\PostInstall\INSERT_QUERY_ALL_DATA_INTO_NATIONALIDTYPES_CoreDB.sql" />
+    <Build Include="Scripts\PostInstall\INSERT_QUERY_ALL_DATA_INTO_PLACES_CoreDB.sql" />
+    <Build Include="Scripts\PostInstall\INSERT_QUERY_ALL_DATA_INTO_REGIONS_CoreDB.sql" />
+  </ItemGroup>
+</Project>
