@@ -6,5 +6,5 @@ CoreDB places, regions and district all represent Croatian cities, divisions and
 
 </br>
 All downloaded xls files from url above are converted to csv and from csv to sql tables and vice versa.
-<sup>[1](#myfootnote1)</sup>
+<sup>[1]</sup>
 
